@@ -23,16 +23,17 @@ export const getFileExtension = (str) => {
 };
 
 export const longestString = (arr) => {
- var max = 0;
- for (var i = 0; i < arr.length; i += 1) {
-    if ((typeof(arr[max]) === 'string' || arr[max] instanceof String)&&(typeof(arr[i]) === 'string' || arr[i] instanceof String))
-
-
-{
-    if(arr[i].length >arr[max].length)
-    max = i;}
-}
-return arr[max];
+var res="";
+var i;
+    
+    for (i=0; i<arr.length;i++){
+    
+        if (arr[i].length> res.length  && typeof arr[i]==='string')
+	
+	   res = arr[i];
+    }
+ 
+return res;
 };
 
 export const reverseString = (str) => {
@@ -60,7 +61,6 @@ export const nestedSum = (arr) => {
 
 var i, sum =0;
     for (i=0;i<arr.length;i++){
-
 	if (Array.isArray(arr[i])){
 		sum+=nestedSum(arr[i]);
         }else if(Number.isInteger(arr[i]))
